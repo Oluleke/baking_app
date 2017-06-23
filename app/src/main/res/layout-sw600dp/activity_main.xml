@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    tools:context="rainmekka.andela.com.baking_app.ui.MainActivity">
+
+    <!--
+    This layout is a two-pane layout for the master/detail flow.
+    -->
+
+    <!-- The static MasterListFragment -->
+    <fragment
+        android:id="@+id/reciepe_list_fragment"
+        android:name="rainmekka.andela.com.baking_app.ui.ReciepeListFragment"
+        android:layout_width="200dp"
+        android:layout_height="match_parent" />
+
+    <!-- A small divider -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray" />
+
+    <!-- LinearLayout that arranges two baking app body parts -->
+    <LinearLayout
+        android:id="@+id/baking_app_linear_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <!-- Three vertically arranged fragments - the frame layouts are containers -
+        one for each baking-app part (Video, Setup Instructions) -->
+
+        <FrameLayout
+            android:id="@+id/video_container"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerInside"/>
+
+        <FrameLayout
+            android:id="@+id/reciepe_steps_container"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerInside"/>
+
+    </LinearLayout>
+
+</LinearLayout>
